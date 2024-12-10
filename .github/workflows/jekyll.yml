@@ -38,8 +38,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y libyaml-dev build-essential zlib1g-dev libssl-dev libreadline-dev libgdbm-dev libncurses5-dev libffi-dev libsqlite3-dev libgmp-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev libicu-dev libjemalloc-dev
+          apt-get update
+          apt-get install -y libyaml-dev build-essential zlib1g-dev libssl-dev libreadline-dev libgdbm-dev libncurses5-dev libffi-dev libsqlite3-dev libgmp-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev libicu-dev libjemalloc-dev
 
 
       - name: Setup Ruby
