@@ -39,7 +39,6 @@ jobs:
           sudo mkdir -p /__w/_temp/_runner_file_commands /__w/_actions
           sudo chown -R jekyll:jekyll /__w
           sudo chmod -R 777 /__w
-          sudo -s
     
       - name: Checkout
         uses: actions/checkout@v4
