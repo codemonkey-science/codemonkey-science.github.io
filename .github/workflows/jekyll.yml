@@ -30,9 +30,17 @@ jobs:
   # Build job
   build:
     runs-on: self-hosted
-    container: ghcr.io/codemonkey-science/jekyll-ci-image:latest
+    container: 
+      image: ghcr.io/codemonkey-science/jekyll-ci-image:latest
+      options: --user root
 
     steps:
+      - name: Setup workspace permissions
+        run: |
+          sudo mkdir -p /__w/_temp/_runner_file_commands /__w/_actions
+          sudo chown -R jekyll:jekyll /__w
+          sudo chmod -R 755 /__w
+    
       - name: Checkout
         uses: actions/checkout@v4
 
