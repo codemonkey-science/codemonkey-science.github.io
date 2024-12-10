@@ -30,17 +30,11 @@ jobs:
   # Build job
   build:
     runs-on: self-hosted
-    container: ubuntu:22.04
+    container: ghcr.io/codemonkey-science/jekyll-ci-image:latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: |
-          apt-get update
-          apt-get install -y libyaml-dev build-essential zlib1g-dev libssl-dev libreadline-dev libgdbm-dev libncurses5-dev libffi-dev libsqlite3-dev libgmp-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev libicu-dev libjemalloc-dev
-
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 # v1.161.0
