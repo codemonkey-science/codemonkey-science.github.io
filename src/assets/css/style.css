@@ -15,7 +15,11 @@
   * Remove default margin.
   */
  body {
-   margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
  }
  
  /* HTML5 display definitions
@@ -41,7 +45,7 @@
  summary {
    display: block;
  }
- 
+
  /**
   * 1. Correct `inline-block` display not defined in IE 8/9.
   * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
@@ -802,6 +806,11 @@
  
  .main-content {
    word-wrap: break-word;
+   flex: 1; /* This allows main content to grow and push footer down */
+   width: 100%;
+   max-width: 64rem;
+   padding: 2rem 6rem;
+   margin: 0 auto;
  }
  .main-content :first-child {
    margin-top: 0;
@@ -855,7 +864,7 @@
  }
  .main-content p {
    margin-bottom: 1em;
- }
+ } 
  .main-content code {
    padding: 2px 4px;
    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
@@ -972,33 +981,25 @@
  }
  
  .site-footer {
-   padding-top: 2rem;
-   margin-top: 2rem;
-   border-top: solid 1px #eff0f1;
- }
- @media screen and (min-width: 64em) {
-   .site-footer {
-     font-size: 1rem;
-   }
- }
- @media screen and (min-width: 42em) and (max-width: 64em) {
-   .site-footer {
-     font-size: 1rem;
-   }
- }
- @media screen and (max-width: 42em) {
-   .site-footer {
-     font-size: 0.9rem;
-   }
- }
- 
- .site-footer-owner {
-   display: block;
-   font-weight: bold;
- }
- 
- .site-footer-credits {
-   color: #819198;
- }
+  flex-shrink: 0; /* Prevents the footer from shrinking */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 6rem;
+  background-color: #f8f9fa;
+  color: #aaaaaa;
+  border-top: 1px solid #e9ecef;
+  font-size: .75rem;
+  margin-top: auto; /* Pushes the footer to the bottom */
+}
+.site-footer-credits {
+  flex: 1;
+  text-align: left;
+}
+.site-footer-version {
+  flex: 1;
+  text-align: right;
+}
  
  /*# sourceMappingURL=style.css.map */
